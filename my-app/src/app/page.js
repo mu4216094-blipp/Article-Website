@@ -67,34 +67,229 @@ export default function Home() {
     </div>
   );
 }<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website - Home</title>
+    
     <style>
-        body {
-            background-color: #800020; /* Mehroon Background */
-            color: white;             /* White Text */
+        /* CSS Styling - Maroon & White Theme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
         }
-        .box {
-            background-color: white;
-            color: #800020;
+
+        body {
+            background-color: #f9f9f9;
+            color: #222222;
+            line-height: 1.6;
+        }
+
+        /* Color Variables */
+        :root {
+            --mehroon: #800020;
+            --mehroon-dark: #5a0017;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        /* Navbar Header */
+        .navbar {
+            background-color: var(--mehroon);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Container Layout */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 0 15px;
+            gap: 20px;
+        }
+
+        .main-content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: var(--white);
             padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--mehroon);
+            border-radius: 4px;
+        }
+
+        .sidebar h3 {
+            color: var(--mehroon);
+            margin-bottom: 10px;
+        }
+
+        /* Cards Style */
+        .card {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--mehroon);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .card h2 {
+            color: var(--mehroon);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--mehroon);
+            color: var(--white);
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background-color: var(--mehroon-dark);
+        }
+
+        /* AdSense Area */
+        .ad-box {
+            max-width: 1100px;
+            margin: 20px auto 0 auto;
+            background-color: var(--white);
+            border: 1px dashed #bbb;
+            padding: 15px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--mehroon);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 15px;
+            margin-top: 40px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .navbar, .container {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 10px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links li {
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to My Website</h1>
-    <p>Ye mera Maroon aur White theme hai.</p>
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">MyBrand</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="box">
-        <h2>Content Area</h2>
-        <p>Yahan aapka main content aur AdSense ki details aayengi.</p>
+    <!-- AdSense Banner Unit Placement -->
+    <div class="ad-box">
+        <p>[ Google AdSense Banner Area ]</p>
     </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <main class="main-content">
+            <article class="card">
+                <h2>Welcome to Our Website</h2>
+                <p>This layout is designed with a clean Maroon and White theme specifically optimized for fast AdSense approval and mobile responsiveness.</p>
+                <a href="#" class="btn">Read More</a>
+            </article>
+
+            <article class="card" id="privacy">
+                <h2>Privacy Policy</h2>
+                <p>We value your privacy. Third-party vendors like Google use cookies to serve ads based on user visits to this and other websites on the internet.</p>
+            </article>
+        </main>
+
+        <!-- Sidebar Unit -->
+        <aside class="sidebar">
+            <h3>Sidebar Widget</h3>
+            <p>You can add category links, recent posts, or an ad unit here.</p>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a> | 
+            <a href="#privacy">Privacy Policy</a> | 
+            <a href="#">Terms of Use</a> | 
+            <a href="#">About Us</a> | 
+            <a href="#">Contact Us</a>
+        </div>
+        <br>
+        <p>&copy; 2026 MyBrand. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
