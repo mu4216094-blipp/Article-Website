@@ -68,100 +68,72 @@ export default function Home() {
   );
 }
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  const menu = document.getElementById("menu");
-  const nav = document.getElementById("nav");
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">MyBrand</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  // Mobile menu
-  if (menu && nav) {
-    menu.addEventListener("click", function () {
-      nav.classList.toggle("open");
-    });
+    <!-- Main Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Our Website</h1>
+        <p>Your ultimate destination for quality content and expert insights.</p>
+    </section>
 
-    nav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("open");
-      });
-    });
-  }
+    <!-- Ad Space Container (Adsense Compliant Layout) -->
+    <div class="ad-container">
+        <!-- Google Adsense Code Place Here -->
+        <p>[ Ad Placement Area ]</p>
+    </div>
 
-  // Page navigation
-  function showPage() {
-    const pageId = window.location.hash.slice(1) || "home";
+    <!-- Main Content Area -->
+    <main class="container">
+        <div class="content">
+            <h2>Latest Posts</h2>
+            <article class="card">
+                <h3>Sample Article Title</h3>
+                <p>This is a short description of the article. Having high-quality, unique content is critical for Google AdSense approval.</p>
+                <a href="#" class="btn">Read More</a>
+            </article>
+        </div>
 
-    const pages = document.querySelectorAll(".page");
-    const target = document.getElementById(pageId);
+        <!-- Sidebar for Navigation / Ads -->
+        <aside class="sidebar">
+            <h3>Sidebar Widget</h3>
+            <p>You can place additional category links, recent posts, or an ad unit here.</p>
+        </aside>
+    </main>
 
-    pages.forEach(function (page) {
-      page.classList.remove("active");
-    });
+    <!-- AdSense Friendly Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="#">Terms of Use</a> | 
+            <a href="#">About Us</a> | 
+            <a href="#">Contact Us</a>
+        </div>
+        <p>&copy; 2026 MyBrand. All Rights Reserved.</p>
+    </footer>
 
-    if (target && target.classList.contains("page")) {
-      target.classList.add("active");
-    } else {
-      document.getElementById("home").classList.add("active");
-    }
-
-    window.scrollTo({
-      top: 0,
-      behavior: "instant"
-    });
-  }
-
-  window.addEventListener("hashchange", showPage);
-
-  showPage();
-
-  // Footer year
-  const year = document.getElementById("year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-  // Article search
-  const search = document.getElementById("search");
-  const cards = document.querySelectorAll(".card");
-  const noResults = document.getElementById("noResults");
-
-  if (search) {
-    search.addEventListener("input", function () {
-      const term = search.value.toLowerCase().trim();
-      let count = 0;
-
-      cards.forEach(function (card) {
-        const matches = card.textContent
-          .toLowerCase()
-          .includes(term);
-
-        card.style.display = matches ? "" : "none";
-
-        if (matches) {
-          count++;
-        }
-      });
-
-      if (noResults) {
-        noResults.hidden = count !== 0;
-      }
-    });
-  }
-
-  // Demo contact form
-  const form = document.getElementById("contactForm");
-  const message = document.getElementById("formMessage");
-
-  if (form && message) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      message.textContent =
-        "This is a demo form. Please connect an email service.";
-
-    });
-  }
-
-});
-</script>
+</body>
+</html>
