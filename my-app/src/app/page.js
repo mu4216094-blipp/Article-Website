@@ -66,7 +66,7 @@ export default function Home() {
       </main>
     </div>
   );
-}export default function Home() {
+export default function Home() {
   return (
     <div>
       <header style={{backgroundColor: '#800020', color: '#fff', padding: '15px', textAlign: 'center'}}>
@@ -83,3 +83,4 @@ export default function Home() {
       </footer>
     </div>
   );
+}
